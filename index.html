@@ -1,0 +1,68 @@
+</html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script>
+		//the real
+		var bglist = []
+		for(i = 1; i < 10 + 1; i++) {
+			bglist.push("bg/bg" + i + ".png");
+		}
+
+		//REAL
+		var randomItem = bglist[Math.floor(Math.random()*bglist.length)];
+
+
+		var formatteditem = "background-image: url('" + randomItem + "');";
+
+		//fuck you (styles your sheet)
+		var style = document.createElement('style');
+		style.innerHTML = '.bg {' + formatteditem + '}';
+		var ref = document.querySelector('script');
+		ref.parentNode.insertBefore(style, ref);
+
+		</script>
+		<style>
+		/*i cant be bothered making this look good who the fuck will read it anyway*/
+		body, html {
+		  height: 100%;
+		  margin: 0;
+		}
+
+		.bg {
+		  height: 100%;
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		}
+
+
+		.txt {
+		  opacity: 50%;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+
+		}
+
+		@font-face { 
+		  font-family: LemonMilk; 
+		  src: url(font/LEMONMILK-Bold.ttf); 
+		  }
+
+		.floppa {
+		  font-family: 'LemonMilk';  
+		  position: relative;
+		  text-align: center;
+		  color: black;
+		  font-size: 200;
+		}
+		</style>
+	</head>
+	<body>
+		<div class ="floppa">
+			<div class="txt">LUKEMASH</div>
+			<div class="bg"></div>
+		</div>
+	</body>
+</html>
